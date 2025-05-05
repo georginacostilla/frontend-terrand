@@ -1,68 +1,64 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --bg-color-white: #ffffff;
+    --bg-color-primary: #e8b659;
+    --bg-color-secondary: #2c3e50;
+    --bg-color-tertiary: #f9f8f0;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    --font-color-primary: #8A6113;
+    --font-color-secondary: #ffffff;
+    --font-color-tertiary: #C29747;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --bottom-color-green: #1c7323;
+    --bottom-color-red: #a52a2a;
+    --bottom-color-blue: #08266f;
+    --bottom-color-white: #ffffff;
+    --bottom-color-aqua: #ACEBE0;
+    --bottom-color-beige: #F8F8F5;
+    --bottom-color-brown: #8A6113;
+    --bottom-color-lightblue: #0F3E8D;
+
+    --font-size-title: 2rem;
+    --font-size-title-tablet: 2.5rem;
+    --font-size-title-desktop: 3rem;
+    --font-size-subtitle: 1.5rem;
+    --font-size-subtitle-tablet: 2rem;
+    --font-size-subtitle-desktop: 2.5rem;
+    --font-size-paragraph: 1rem;
+    --font-size-paragraph-tablet: 1.15rem;
+    --font-size-paragraph-desktop: 1.25rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    background-color: var(--bg-color-secondary);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+a {
+    text-decoration: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.titulo {
+    font-size: var(--font-size-title);
+    color: var(--font-color-primary);
+}
+
+.subtitulo {
+    color: var(--font-color-primary);
+    font-size: var(--font-size-subtitle);
+}
+
+.parrafo {
+    color: var(--font-color-primary);
+    font-size: var(--font-size-paragraph);
+    line-height: 2rem;
 }
