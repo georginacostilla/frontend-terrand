@@ -120,6 +120,14 @@
     background-color: #00bfff96;
 }
 
+.welcome-title {
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 100, 150, 0.3);
+}
+
 @keyframes pulse {
     from {
         transform: scale(0.9);
