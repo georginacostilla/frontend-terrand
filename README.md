@@ -1,12 +1,42 @@
-# React + Vite
+# 📌 Prueba técnica - Terrand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación Fullstack desarrollada como parte de un desafío técnico. Permite a los usuarios registrarse, iniciar sesión y compartir recetas de cocina mediante un panel privado, además de generar enlaces públicos para compartirlas.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Registro de usuario (Nombre, Apellido, Email, Contraseña)
+- Login con Email y Contraseña
+- Panel privado con:
+  - Visualización de recetas propias
+  - Creación de nuevas recetas
+  - Edición y eliminación de recetas
+- Cada receta incluye:
+  - Título
+  - Descripción
+  - Ingredientes
+- Generación automática de un link público por receta
 
-## Expanding the ESLint configuration
+## 🔧 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, Vite, Bootstrap
+- **Backend:** NestJS, Prisma, Swagger
+- **Base de datos:** PostgreSQL
+- **Control de versiones:** Git & GitHub
+- **Deploy:** Netlify (frontend), Vercel (backend), Supabase (backend)
+
+## 🧪 Extras implementados (opcional)
+
+- Subida de imágenes por receta
+- Deploy en producción
+
+## ▶️ Cómo correr el proyecto localmente
+
+Clonar el repositorio:
+```bash
+git clone https://github.com/georginacostilla/frontend-terrand.git
+cd ../front-terrand
+npm install
+npm run dev
+```
+
+- Georgina Costilla: https://github.com/georginacostilla | https://www.linkedin.com/in/georgina-costilla/
