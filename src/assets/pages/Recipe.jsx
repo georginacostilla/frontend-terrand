@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import RecipeCard from '../components/RecipeCard';
 import CreateRecipe from '../components/CreateRecipe';
 import EditRecipe from '../components/EditRecipe';
+import axios from 'axios';
+import Swal from "sweetalert2";
+import jwt_decode from 'jwt-decode'; // Asegúrate de importar correctamente
 
 function Recipe() {
   const [recipes, setRecipes] = useState([]);
@@ -18,7 +20,18 @@ function Recipe() {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/v1/recetas');
+      const token = localStorage.getItem('token');
+      console.log('Token:', token); 
+      if (!token) {
+        console.error('Token no encontrado');
+        return;
+      }
+
+      const response = await axios.get('http://localhost:8000/api/v1/recetas', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setRecipes(response.data);
     } catch (error) {
       console.error('Error al cargar las recetas:', error);
@@ -26,12 +39,32 @@ function Recipe() {
   };
 
   const handleSaveRecipe = async (newRecipe) => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      console.error('Token no encontrado');
+      return;
+    }
+
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/recetas', newRecipe);
-      setRecipes((prev) => [...prev, response.data]);
+      const decoded = jwt_decode(token);
+      const userId = decoded.id;
+
+      const recipeWithUser = {
+        ...newRecipe,
+        userId: userId,
+      };
+
+      const response = await axios.post('http://localhost:8000/api/v1/recetas', recipeWithUser, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setRecipes([...recipes, response.data]);
       setShowCreateModal(false);
     } catch (error) {
-      console.error('Error al guardar receta:', error);
+      console.error('Error saving recipe:', error);
     }
   };
 
@@ -54,7 +87,16 @@ function Recipe() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/');
+    Swal.fire({
+      icon: "success",
+      title: "Éxito",
+      text: "Has cerrado sesión correctamente.",
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true,
+    }).then(() => {
+      navigate('/');
+    });
   };
 
   return (

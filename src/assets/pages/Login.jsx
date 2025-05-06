@@ -17,7 +17,7 @@ const Login = () => {
         email,
         password,
       });
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem('token', response.data.token.accessToken);
       Swal.fire({
         icon: "success",
         title: "Éxito",
@@ -26,7 +26,7 @@ const Login = () => {
         timer: 1500,
         timerProgressBar: true,
       }).then(() => {
-        navigate('/recetas');
+        navigate('/recipe');
       });
     } catch (error) {
       Swal.fire({

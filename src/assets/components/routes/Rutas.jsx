@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import Login from '../../pages/Login';
 import Register from '../../pages/Register';
 import Recipe from "../../pages/Recipe";
@@ -9,8 +9,7 @@ const Rutas = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/recipe" element={<Recipe />} />
-      <Route path="/recetas" element={<PrivateRoute><Recipe /></PrivateRoute>} />
+      <Route path="/recipe" element={<PrivateRoute><Recipe /></PrivateRoute>} />
     </Routes>
   );
 };

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import Swal from "sweetalert2";
 
 function CreateRecipe({ show, onClose, onSave }) {
   const [title, setTitle] = useState('');
