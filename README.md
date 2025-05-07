@@ -1,6 +1,6 @@
 # 📌 Prueba técnica - Terrand
 
-Aplicación Fullstack desarrollada como parte de un desafío técnico. Permite a los usuarios registrarse, iniciar sesión y compartir recetas de cocina mediante un panel privado, además de generar enlaces públicos para compartirlas.
+Aplicación Fullstack desarrollada como parte de un desafío técnico. Permite a los usuarios registrarse, iniciar sesión y visualizar recetas de cocina mediante un panel privado, además de generar enlaces públicos para compartirlas.
 
 ## 🚀 Funcionalidades principales
 
@@ -8,8 +8,7 @@ Aplicación Fullstack desarrollada como parte de un desafío técnico. Permite a
 - Login con Email y Contraseña
 - Panel privado con:
   - Visualización de recetas propias
-  - Creación de nuevas recetas
-  - Edición y eliminación de recetas
+  - Creación y edición de recetas
 - Cada receta incluye:
   - Título
   - Descripción
@@ -20,14 +19,8 @@ Aplicación Fullstack desarrollada como parte de un desafío técnico. Permite a
 
 - **Frontend:** React, Vite, Bootstrap
 - **Backend:** NestJS, Prisma, Swagger
-- **Base de datos:** PostgreSQL
+- **Base de datos:** PostgreSQL - Supabase
 - **Control de versiones:** Git & GitHub
-- **Deploy:** Netlify (frontend), Vercel (backend), Supabase (backend)
-
-## 🧪 Extras implementados (opcional)
-
-- Subida de imágenes por receta
-- Deploy en producción
 
 ## ▶️ Cómo correr el proyecto localmente
 
@@ -38,5 +31,5 @@ cd ../front-terrand
 npm install
 npm run dev
 ```
-
+### El envío de la prueba incluirá un archivo con las variables de entorno definidas en el archivo .env para el Backend 
 - Georgina Costilla: https://github.com/georginacostilla | https://www.linkedin.com/in/georgina-costilla/
