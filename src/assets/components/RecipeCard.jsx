@@ -10,7 +10,6 @@ const RecipeCard = ({ recipe, onEdit }) => {
   const token = localStorage.getItem('token');
   const userId = token ? jwtDecode(token).id : null;
 
-
   const getRating = async () => {
     try {
       const response = await axios.get(`http://localhost:8000/api/v1/calificaciones/usuario/${userId}/receta/${recipe.id}`, {
@@ -48,7 +47,7 @@ const RecipeCard = ({ recipe, onEdit }) => {
   }
 
   return (
-    <Card className="mb-4 shadow-sm rounded-3">
+    <Card className="custom-card mb-4 shadow-sm rounded-3">
       <Card.Body>
         <Card.Title>{recipe.title}</Card.Title>
         <Card.Text>{recipe.description}</Card.Text>
@@ -60,7 +59,7 @@ const RecipeCard = ({ recipe, onEdit }) => {
         <div className='mt-2'>
           {rating ? <p><strong>Tu calificación: </strong>{rating}</p> : <div>
             <select onChange={(e) => setScore(e.target.value)} name="" id="">
-              <option value="">Seleccionar</option>
+              <option value="">Calificar</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
